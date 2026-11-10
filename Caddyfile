@@ -5,9 +5,4 @@ reparbre.laurans.org {
   handle_path /api/* {
     reverse_proxy backend:3000
   }
-  
-  # HTTPS
-  tls {
-    alpn http/1.1
-  }
 }
