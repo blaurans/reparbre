@@ -1,0 +1,13 @@
+reparbre.laurans.org {
+  reverse_proxy frontend:5000
+  
+  # Backend API
+  handle_path /api/* {
+    reverse_proxy backend:3000
+  }
+  
+  # HTTPS
+  tls {
+    alpn http/1.1
+  }
+}
